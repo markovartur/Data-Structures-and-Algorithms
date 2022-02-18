@@ -114,7 +114,7 @@
     "            row.append(random.randrange(user_min_limit, user_max_limit))\n",
     "        array.append(row)\n",
     "        print(row)\n",
-    "    print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))\n",
+    "    print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))\n",
     "    return array\n",
     "print(random_array_generator(user_m, user_n, user_min_limit, user_max_limit))\n"
    ]
@@ -143,7 +143,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 51,
    "id": "cleared-anniversary",
    "metadata": {},
    "outputs": [
@@ -151,15 +151,19 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
+      "[725, 584, 530, -32, 570, 934, -154, 796]\n",
+      "[440, -82, 990, -222, 711, 127, -148, 837]\n",
+      "[611, 447, 186, 330, 957, 862, 668, 780]\n",
+      "--- 1 ms ---\n",
       "Исходная матрица\n",
-      "[26, 22, -58, 988, -136, -244, 201, 959]\n",
-      "[840, 184, 766, 123, 750, 256, 297, -20]\n",
-      "[283, 497, 728, -194, 728, -72, -112, 293]\n",
+      "[725, 584, 530, -32, 570, 934, -154, 796]\n",
+      "[440, -82, 990, -222, 711, 127, -148, 837]\n",
+      "[611, 447, 186, 330, 957, 862, 668, 780]\n",
       "Отсортированная матрица\n",
-      "[-58, 22, 26, 988, -136, -244, 201, 959]\n",
-      "[766, 184, 840, 123, 750, 256, 297, -20]\n",
-      "[283, 497, 728, -194, 728, -72, -112, 293]\n",
-      "--- 0 ms ---\n"
+      "[530, 584, 725, -32, 570, 934, -154, 796]\n",
+      "[-82, 440, 990, -222, 711, 127, -148, 837]\n",
+      "[186, 447, 611, 330, 957, 862, 668, 780]\n",
+      "--- 2.000 ms ---\n"
      ]
     }
    ],
@@ -193,7 +197,7 @@
     "    print(selection_sort(selection_sort_array[k]))\n",
     "\n",
     "time_selection_sort = round((time.time() - start_time)*1000)\n",
-    "print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))"
+    "print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))"
    ]
   },
   {
@@ -245,7 +249,7 @@
     "    print(insertion_sort(insertion_sort_array[k]))\n",
     "    \n",
     "time_insertion_sort = round((time.time() - start_time)*1000)    \n",
-    "print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))"
+    "print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))"
    ]
   },
   {
@@ -297,7 +301,7 @@
     "    print(bubble_sort(bubble_sort_array[k]))\n",
     "\n",
     "time_bubble_sort= round((time.time() - start_time)*1000)   \n",
-    "print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))"
+    "print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))"
    ]
   },
   {
@@ -353,7 +357,7 @@
     "    print(Shell_sort(Shell_sort_array[k]))\n",
     "    \n",
     "time_Shell_sort = round((time.time() - start_time)*1000)    \n",
-    "print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))"
+    "print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))"
    ]
   },
   {
@@ -375,7 +379,7 @@
     "start_time = time.time()\n",
     "#TODO\n",
     "time_quick_sort = round((time.time() - start_time)*1000)\n",
-    "print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))\n",
+    "print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))\n",
     "    "
    ]
   },
@@ -398,7 +402,7 @@
     "start_time = time.time()\n",
     "#TODO\n",
     "time_tournament_sort = round((time.time() - start_time)*1000)\n",
-    "print(\"--- {0} ms ---\".format(round((time.time() - start_time)*1000)))"
+    "print(\"--- {:.3f} ms ---\".format(round((time.time() - start_time)*1000)))"
    ]
   },
   {
@@ -412,7 +416,7 @@
   {
    "cell_type": "code",
    "execution_count": 40,
-   "id": "a23c91c2",
+   "id": "95e12bc0",
    "metadata": {},
    "outputs": [
     {
@@ -521,13 +525,15 @@
     "              [\"Быстрая сортировка\", time_quick_sort, \"O(n^2)\", \"O(n*log(n))\"],\n",
     "              [\"Турнирная сортировка\", time_tournament_sort, \"O(n*log(n))\", \"---\"]]\n",
     "\n",
+    "#найти самый быстрый и сравнивать остальные с ним по времени\n",
+    "\n",
     "pandas.DataFrame(table_sort, columns=[\"Алгортим сортировки\",\"Время работы алгоритма\", \"Сложность в худшем случае\", \"Сложность в лучшем случае\"])"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "1cec6b08",
+   "id": "bacc7a1f",
    "metadata": {},
    "outputs": [],
    "source": []
